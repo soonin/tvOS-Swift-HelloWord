@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tvOS_Swift_HelloWord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,9 +21,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGL-sj-aKQ">
+                                <rect key="frame" x="837" y="497" width="247" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="2fw-lB-3H8"/>
+                                    <constraint firstAttribute="width" constant="247" id="RvI-FX-kAP"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Click Me !"/>
+                                <connections>
+                                    <action selector="btnTap:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="e8A-Rg-uoy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5f-oD-Alp">
+                                <rect key="frame" x="528" y="671" width="865" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="865" id="A7Y-sk-ehr"/>
+                                    <constraint firstAttribute="height" constant="131" id="GEm-NN-qq8"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wGL-sj-aKQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CsU-Fk-XBp"/>
+                            <constraint firstItem="d5f-oD-Alp" firstAttribute="top" secondItem="wGL-sj-aKQ" secondAttribute="bottom" constant="88" id="Lyu-J0-gG1"/>
+                            <constraint firstItem="d5f-oD-Alp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="peK-fp-DZY"/>
+                            <constraint firstItem="wGL-sj-aKQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q28-qH-Py6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
+                    <connections>
+                        <outlet property="labelView" destination="d5f-oD-Alp" id="9WF-pL-q41"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

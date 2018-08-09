@@ -10,16 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var labelView: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
+    
+    @IBAction func btnTap(_ sender: Any) {
+        if self.labelView.text != "Bbye, tvOS" {
+            self.labelView.text = "Bbye, tvOS"
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        } else {
+            self.labelView.text = "Hello, tvOS"
+        }
     }
-
-
+    
 }
 
